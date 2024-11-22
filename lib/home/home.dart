@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfire/shared/bottom_nav.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
         child: ElevatedButton(onPressed: () => Navigator.pushNamed(context, '/about' )
         , child: const Text('About')),
       ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
