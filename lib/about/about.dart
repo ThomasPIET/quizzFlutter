@@ -13,7 +13,7 @@ class AboutScreen extends StatelessWidget {
       body: const Center(
         child: Text("About Screen"),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(currentIndex: 1),
     );
   }
 }

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({super.key});
+  final int currentIndex;
+  const BottomNavBar({super.key, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(FontAwesomeIcons.user), label: 'Profile'),
       ],
       onTap: (index) {
+        if (index == currentIndex) return;
         switch (index) {
           case 0:
             Navigator.pushNamed(context, '/');

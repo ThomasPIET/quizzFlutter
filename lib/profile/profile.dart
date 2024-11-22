@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
       body: const Center(
         child: Text('Profile Screen'),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(currentIndex: 2),
     );
   }
 }
