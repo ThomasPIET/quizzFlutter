@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:from_zero/shared/bottom_nav.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({super.key});
@@ -12,6 +13,7 @@ class TopicsScreen extends StatelessWidget {
       body: const Center(
         child: Text('Topics Screen'),
       ),
+      bottomNavigationBar: const BottomNavBar(currentIndex: 0),
     );
   }
 }

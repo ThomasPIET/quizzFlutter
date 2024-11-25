@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'flutterfire-17a3d',
     storageBucket: 'flutterfire-17a3d.firebasestorage.app',
   );
+
 }
