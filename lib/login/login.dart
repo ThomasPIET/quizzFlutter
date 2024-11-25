@@ -2,27 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:from_zero/services/auth.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool isLoading = false;
+
+  void toggleLoading() {
+    setState(() {
+      isLoading = !isLoading;
+    });
+  }
+
+  Future<void> handleSignInAnonymously() async {
+    toggleLoading();
+    try {
+      await AuthServices().signInAnonymously();
+    } catch (e) {
+      print(e);
+    } finally {
+      toggleLoading();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Login'),
+      appBar: AppBar(
+        title: const Text('Login'),
+      ),
+      body: Center(
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : LoginButton(
+          color: Colors.deepPurple,
+          text: 'Sign in Anonymously',
+          loginMethod: handleSignInAnonymously,
+          icon: FontAwesomeIcons.userNinja,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Flexible(
-                child: LoginButton(
-                    color: Colors.deepPurple,
-                    text: 'Sign in Anonymously',
-                    loginMethod: AuthServices().signInAnonymously,
-                    icon: FontAwesomeIcons.userNinja)),
-          ],
-        ));
+      ),
+    );
   }
 }
 
@@ -32,12 +55,13 @@ class LoginButton extends StatelessWidget {
   final Function loginMethod;
   final IconData icon;
 
-  const LoginButton(
-      {super.key,
-      required this.color,
-      required this.text,
-      required this.loginMethod,
-      required this.icon});
+  const LoginButton({
+    super.key,
+    required this.color,
+    required this.text,
+    required this.loginMethod,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +78,8 @@ class LoginButton extends StatelessWidget {
           fontSize: 20.0,
         ),
       ),
-      style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(color),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
       ),
       onPressed: () => loginMethod(),
     );
