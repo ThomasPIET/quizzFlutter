@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1019382790753",
+    "project_id": "flutterfire-17a3d",
+    "storage_bucket": "flutterfire-17a3d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019382790753:android:be841f8260505b19f50820",
+        "android_client_info": {
+          "package_name": "com.example.from_zero"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-YepGsxlAzCj0OCj1GvUiNYkaD1Eoa-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019382790753:android:22c318327c9b8ee5f50820",
+        "android_client_info": {
+          "package_name": "com.thomas.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-YepGsxlAzCj0OCj1GvUiNYkaD1Eoa-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
