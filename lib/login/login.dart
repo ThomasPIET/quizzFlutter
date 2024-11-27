@@ -29,6 +29,18 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  Future<void> handleSignInWithGoogle() async {
+    toggleLoading();
+    try {
+      await AuthServices().signInWithGoogle();
+    } catch (e) {
+      print(e);
+    } finally {
+      toggleLoading();
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +48,28 @@ class _LoginScreenState extends State<LoginScreen> {
         title: const Text('Login'),
       ),
       body: Center(
-        child: isLoading
-            ? const CircularProgressIndicator()
-            : LoginButton(
-          color: Colors.deepPurple,
-          text: 'Sign in Anonymously',
-          loginMethod: handleSignInAnonymously,
-          icon: FontAwesomeIcons.userNinja,
-        ),
+        child: Column(
+          children: [
+            isLoading
+                ? const CircularProgressIndicator()
+                : LoginButton(
+              color: Colors.deepPurple,
+              text: 'Sign in Anonymously',
+              loginMethod: handleSignInAnonymously,
+              icon: FontAwesomeIcons.userNinja,
+            ),
+            isLoading
+                ? const CircularProgressIndicator()
+                : LoginButton(
+              color: Colors.blue,
+              text: 'Sign in with Google',
+              loginMethod: handleSignInWithGoogle,
+              icon: FontAwesomeIcons.google,
+            ),
+          ],
+        )
+
+
       ),
     );
   }

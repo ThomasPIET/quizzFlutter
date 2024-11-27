@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1019382790753",
-    "project_id": "flutterfire-17a3d",
-    "storage_bucket": "flutterfire-17a3d.firebasestorage.app"
+    "project_number": "164931147559",
+    "project_id": "fromzero-9459f",
+    "storage_bucket": "fromzero-9459f.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1019382790753:android:22c318327c9b8ee5f50820",
+        "mobilesdk_app_id": "1:164931147559:android:7f3134c800b6a40fa4bb02",
         "android_client_info": {
           "package_name": "com.example.from_zero"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB-YepGsxlAzCj0OCj1GvUiNYkaD1Eoa-c"
+          "current_key": "AIzaSyC1PEbaE6u-utJnJc0OTwWcBiFxsEdzREM"
         }
       ],
       "services": {
